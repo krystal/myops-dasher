@@ -9,7 +9,7 @@ module MyOps
       end
     end
 
-    class DasherUpdateJob < MyOps::Job
+    class DasherUpdateJob < ApplicationJob
       def perform
         # Update OK services
         ok_services = Collection.where(:current_trigger_id => nil, :error_code => nil).count
