@@ -29,7 +29,7 @@ module MyOps
           list_items << {
             :identifier => collection.id.to_s,
             :properties => {
-              :category => collection.status == 'Red' ? 'critical' : 'warning',
+              :category => collection.color == 'Red' ? 'critical' : 'warning',
               :timestamp => collection.trigger_last_updated_at.to_i,
               :details => "*#{collection.server.hostname}:* #{collection.message}"
             }
